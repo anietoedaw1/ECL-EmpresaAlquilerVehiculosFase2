@@ -3,6 +3,10 @@ package alquileres.test;
 import java.util.Map;
 import java.util.Set;
 
+import alquileres.modelo.AgenciaAlquiler;
+import alquileres.modelo.Coche;
+import alquileres.modelo.Furgoneta;
+
 /**
  *    
  */
@@ -11,8 +15,8 @@ public class TestAgencia {
 	private AgenciaAlquiler agencia;
 
 	/**
-	 * Constructor demo cargarFlota(), obtenerVehiculo(), addVehiculo()
-	 * demo toString()
+	 * Constructor demo cargarFlota(), obtenerVehiculo(), addVehiculo() demo
+	 * toString()
 	 */
 	public TestAgencia(String nombre) {
 		agencia = new AgenciaAlquiler(nombre);
@@ -40,8 +44,7 @@ public class TestAgencia {
 	 * demo cochesOrdenadosMatricula()
 	 */
 	public void testCochesOrdenadosMatricula() {
-		System.out.println(
-		        "Coches de más de 4 plazas ordenados por matrícula (de < a >)\n");
+		System.out.println("Coches de más de 4 plazas ordenados por matrícula (de < a >)\n");
 		for (Coche coche : agencia.cochesOrdenadosMatricula()) {
 			System.out.println(coche.toString());
 			System.out.println("--------------------");
@@ -66,15 +69,13 @@ public class TestAgencia {
 	}
 
 	/**
-	 * demo marcasConModelos() 
+	 * demo marcasConModelos()
 	 */
 	public void testMarcasConModelos() {
 		System.out.println("Marcas y modelos de vehículos por marca\n");
 		Map<String, Set<String>> marcasModelos = agencia.marcasConModelos();
-		for (Map.Entry<String, Set<String>> entrada : marcasModelos
-		        .entrySet()) {
-			System.out.println("Marca: " + entrada.getKey() + "\n\tModelos : "
-			        + entrada.getValue());
+		for (Map.Entry<String, Set<String>> entrada : marcasModelos.entrySet()) {
+			System.out.println("Marca: " + entrada.getKey() + "\n\tModelos : " + entrada.getValue());
 		}
 		hacerPausa();
 
@@ -84,7 +85,7 @@ public class TestAgencia {
 	 * demo guardarMarcasModelos()
 	 */
 	public void testGuardarMarcasModelos() {
-
+		agencia.guardarMarcasModelos();
 	}
 
 	/**
@@ -102,10 +103,8 @@ public class TestAgencia {
 	 */
 	public static void main(String[] args) {
 		if (args.length != 1) {
-			System.out.println(
-			        "Error en nº argumentos\nSintaxis: java TestAgencia <nombre-agencia>");
-		}
-		else {
+			System.out.println("Error en nº argumentos\nSintaxis: java TestAgencia <nombre-agencia>");
+		} else {
 
 			TestAgencia test = new TestAgencia(args[0]);
 
